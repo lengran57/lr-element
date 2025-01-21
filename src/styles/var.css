@@ -1,0 +1,66 @@
+:root {
+  /* colors */
+  --lr-color-white: #ffffff;
+  --lr-color-black: #000000;
+  --colors: (primary: #409eff, success: #67c23a, warning: #e6a23c, danger: #f56c6c, info: #909399);
+  @each $val, $color in var(--colors) {
+    --lr-color-$(val): $(color);
+    @for $i from 3 to 9 by 2 {
+      --lr-color-$(val)-light-$(i): mix(#fff, $(color), .$(i));
+    }
+    --lr-color-$(val)-light-8: mix(#fff, $(color), 0.8);
+    --lr-color-$(val)-dark-2: mix(#000, $(color), 0.2);
+  }
+
+  --lr-bg-color: #ffffff;
+  --lr-bg-color-page: #f2f3f5;
+  --lr-bg-color-overlay: #ffffff;
+  --lr-text-color-primary: #303133;
+  --lr-text-color-regular: #606266;
+  --lr-text-color-secondary: #909399;
+  --lr-text-color-placeholder: #a8abb2;
+  --lr-text-color-disabled: #c0c4cc;
+  --lr-border-color: #dcdfe6;
+  --lr-border-color-light: #e4e7ed;
+  --lr-border-color-lighter: #ebeef5;
+  --lr-border-color-extra-light: #f2f6fc;
+  --lr-border-color-dark: #d4d7de;
+  --lr-border-color-darker: #cdd0d6;
+  --lr-fill-color: #f0f2f5;
+  --lr-fill-color-light: #f5f7fa;
+  --lr-fill-color-lighter: #fafafa;
+  --lr-fill-color-extra-light: #fafcff;
+  --lr-fill-color-dark: #ebedf0;
+  --lr-fill-color-darker: #e6e8eb;
+  --lr-fill-color-blank: #ffffff;
+
+  /* border */
+  --lr-border-width: 1px;
+  --lr-border-style: solid;
+  --lr-border-color-hover: var(--lr-text-color-disabled);
+  --lr-border: var(--lr-border-width) var(--lr-border-style) var(--lr-border-color);
+  --lr-border-radius-base: 4px;
+  --lr-border-radius-small: 2px;
+  --lr-border-radius-round: 20px;
+  --lr-border-radius-circle: 100%;
+
+  /*font*/
+  --lr-font-size-extra-large: 20px;
+  --lr-font-size-large: 18px;
+  --lr-font-size-medium: 16px;
+  --lr-font-size-base: 14px;
+  --lr-font-size-small: 13px;
+  --lr-font-size-extra-small: 12px;
+  --lr-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
+  --lr-font-weight-primary: 500;
+
+  /*disabled*/
+  --lr-disabled-bg-color: var(--lr-fill-color-light);
+  --lr-disabled-text-color: var(--lr-text-color-placeholder);
+  --lr-disabled-border-color: var(--lr-border-color-light);
+
+  /*animation*/
+  --lr-transition-duration: 0.3s;
+  --lr-transition-duration-fast: 0.2s;
+}
